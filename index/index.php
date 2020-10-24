@@ -1,4 +1,8 @@
 <?php
+if(!is_dir($path))
+{
+	 echo "<meta http-equiv=\"refresh\" content=\"0;url=../\">";
+}
 $dir=getDir($path);
 echo "项目<br>";
 foreach($dir as $software) //遍历数组并输出
