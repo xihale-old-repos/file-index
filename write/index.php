@@ -1,6 +1,5 @@
 <?php
 include("../config/ini.php");
-include("ini.php");
 include("login.php");
 include("write.php");
 ?>
