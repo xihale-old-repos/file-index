@@ -1,0 +1,15 @@
+pre{
+/*box-sizing:border-box;*/
+overflow:auto;
+font-family:Menlo, Monaco, Consolas, 'Courier New', monospace;
+font-size:20px;
+padding:9.5px;
+margin-top:0px;
+margin-bottom:10px;
+line-height:1.42857;
+color:#333333;
+word-break:break-all;
+word-wrap:break-word;
+border:1px solid #CCCCCC;
+border-radius:4px;
+background-color:#F5F5F5;}
