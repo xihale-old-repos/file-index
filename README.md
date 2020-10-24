@@ -1,7 +1,7 @@
 # 超级好处：可访问中文Url
 懒癌晚期之隐藏代码：
 1.删除文件/文件夹
-域名/?path=[文件夹]&del=[你的密码(ini.php里的password)]
+域名/?path=[文件夹]&del=[你的密码(ini.php里的password)]<br>
 域名/?file=[文件路径]&del=[你的密码(ini.php里的password)]
 
 由xihale个人开发(其实没什么用,就开个源啥的)(本人css/js小白,css/js文件大部分均来自互联网)(演示站在<a href="https://xihale.rthe.net" target="_blank">xihale的导航</a> 里找吧,找不到就算了;emmm,懒癌晚期)
