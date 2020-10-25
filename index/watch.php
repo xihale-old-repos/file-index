@@ -1,27 +1,30 @@
 <?php
+function scrs($str)
+{
+	return strtr($str,array("/"=>""," "=>"","\\"=>""));
+}
+
 header("content-type: text/html; charset=utf-8");
 $filename=$_GET['file'];
 $path=$files_in.$_GET['path'];
-if($_GET['del']==$password)
+if($_GET['del']==$password||$_GET['del']==$cookie)
 {
-	if($files_in==(strtr($path,array("/"=>"","\\"=>""))))
+	if(scrs($_GET['path'])!=""&&scrs($path)==scrs($files_in))
 	{
 		echo "<script>alert(\"根目录不许删除！\");</script>";
 	}
-	else if($filename!="")
+	else if($filename!=""&&file_exists($files_in.$filename))
 	{
-		if(unlink($fs=$path."/".$filename))
-			echo "<script>alert(\"删除成功！\");</script>";
-		else	
-			echo "<script>alert(\"删除失败！".$fs."\");</script>";
-	}
-	else
-	{
-		if(deldir($fs=$path."/"))
-			echo "<meta http-equiv=\"refresh\" content=\"0;url=../\"><script>alert(\"删除成功！\");</script>";
-		else
+		if(!unlink($fs=$path."/".$filename))
 			echo "<script>alert(\"删除失败！\");</script>";
 	}
+	else if(scrs($_GET['path']!=""))
+	{
+		if(!deldir($fs=$path."/"))
+			echo "<script>alert(\"删除失败！\");</script>";
+	}
+}elseif($_GET['del']!=""){
+		echo "<script>alert(\"您不是管理员或登录失效！\")</script>";
 }
 if($filename!=""&&file_exists($path.$filename)){
 	$fp=fopen($path.$filename,"r");
@@ -32,7 +35,8 @@ if($filename!=""&&file_exists($path.$filename)){
 	exit();
 }
 else if($filename!=""){
-	echo "<script>alert(\"".$filename."不存在!\")</script>";
+	echo "<meta http-equiv=\"refresh\" content=\"0;url=../\">";
+	exit();
 }	
 
 
