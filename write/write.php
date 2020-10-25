@@ -25,16 +25,16 @@ if($dir!=''&&$dir!='/')
 {
 	if(!is_dir("../".$files_in.$dir))
 	{
-		$res=mkdir(iconv("UTF-8", "GBK","../".$files_in."/".$dir),0777,true); 
+		$res=mkdir("../".$files_in."/".$dir,0777,true); 
 		if(!$res)
 			echo "<script>alert(\"项目创建失败\")</script>";
 		else
 			echo "<script>alert(\"目录创建成功\")</script>";
 	}
-	else
+/*	else
 	{
 		echo "<script>alert(\"项目已存在\")</script>";
-	}
+	}*/
 }
 if($filename!='')
 {
