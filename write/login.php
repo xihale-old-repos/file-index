@@ -1,6 +1,6 @@
 <?php
 if($_GET['user']==$user&&$_GET['password']==$password){
-	setcookie($cookie_name,$cookie,time()+3600);
+	setcookie($cookie_name,$cookie,time()+3600,"/");
 	echo "<meta http-equiv=\"refresh\" content=\"0;url=../write\">";
 }
 else if($_COOKIE['write']!=$cookie){
