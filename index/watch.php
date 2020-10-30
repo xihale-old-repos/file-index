@@ -1,9 +1,9 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <?php
 function scrs($str)
 {
 	return strtr($str,array("/"=>""," "=>"","\\"=>""));
 }
-header("content-type: text/html; charset=utf-8");
 $filename=$_GET['file'];
 $path=$files_in.$_GET['path'];
 if($_GET['del']==$password||$_GET['del']==$cookie)
