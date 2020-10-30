@@ -1,4 +1,5 @@
 <?php
+$path=$files_in.$_GET['path'];
 if(!is_dir($path))
 {
 	 echo "<meta http-equiv=\"refresh\" content=\"0;url=../\">";
@@ -22,7 +23,7 @@ foreach($filename as $software) //遍历数组并输出
 	echo "<a href=\"/?file=".$_GET['path']."/".$software."\" target=\"_blank\">".$software."</a>";
 		if($_COOKIE['write']==$cookie&&$software!="")
 	{
-		echo "&nbsp;&nbsp;<a href=\"/?file=".$_GET[''].$_GET['file']."/".$software."&del=".$_COOKIE['write']."\">删除此文件</a>";
+		echo "&nbsp;&nbsp;<a href=\"/?file=".$_GET['path'].$_GET['file']."/".$software."&del=".$_COOKIE['write']."\">删除此文件</a>";
 	}
 	echo "<br>";
 }
