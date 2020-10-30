@@ -3,7 +3,6 @@ function scrs($str)
 {
 	return strtr($str,array("/"=>""," "=>"","\\"=>""));
 }
-
 header("content-type: text/html; charset=utf-8");
 $filename=$_GET['file'];
 $path=$files_in.$_GET['path'];
