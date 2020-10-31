@@ -7,6 +7,7 @@ if(!is_dir($path))
 }
 $dir=getDir($path);
 echo "项目<br>";
+sort($dir);
 foreach($dir as $software) //遍历数组并输出
 {
 	echo "<a href=\"/?path=".$_GET['path']."/".$software."\">".$software."</a>";
@@ -18,6 +19,7 @@ foreach($dir as $software) //遍历数组并输出
 }
 $filename=getFile($path);
 echo "文件<br>";
+sort($filename);
 foreach($filename as $software) //遍历数组并输出
 {
 	echo "<a href=\"/?file=".$_GET['path']."/".$software."\" target=\"_blank\">".$software."</a>";
